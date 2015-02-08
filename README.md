@@ -33,6 +33,11 @@ The ``clusters.conf`` file contains clusters definition as JSON:
             "user@myhost0",
             "user@myhost1",
             "user@myhost2"
+        ],
+        "mytunnel0": [
+            "root@myhost0 -L8001:localhost:8000",
+            "root@myhost1 -L8002:localhost:8000",
+            "root@myhost2 -L8003:localhost:8000"
         ]
     }
 
