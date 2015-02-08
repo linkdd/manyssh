@@ -3,7 +3,7 @@ python:
  - "2.7"
  - "3.4"
 install:
- - apt-get install python-gi
- - python setup.py install
+ - sudo apt-get install python-gi
+ - sudo python setup.py install
 script:
  - python test.py
