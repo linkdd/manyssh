@@ -26,7 +26,7 @@ class Application(object):
         """ Load configuration. """
 
         paths = []
-        dirs = GLib.get_system_config_dirs()
+        dirs = list(GLib.get_system_config_dirs())
         dirs.append(GLib.get_user_config_dir())
 
         paths = [
