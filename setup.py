@@ -10,7 +10,7 @@ class ManySSHInstall(install):
 
     def run(self):
         try:
-            from gi.repository import GLib, Gdk, Gtk, Vte
+            import gi
 
         except ImportError as err:
             import sys
