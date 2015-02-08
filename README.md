@@ -39,3 +39,36 @@ The ``clusters.conf`` file contains clusters definition as JSON:
 You're now able to open your cluster with:
 
     $ manyssh mycluster0
+
+## User Interface
+
+![Main Window](https://raw.githubusercontent.com/linkdd/manyssh/master/doc/ui.png)
+
+Here, your in **INSERT** mode, everything you type will be sent through all activated connections.
+
+Using ``<Control>+Escape``, you will switch to the **COMMAND** mode, allowing you to type commands (instead of clicking).
+Use ``<Control>+Insert`` to switch back to the **INSERT** mode.
+
+A connection can be activated or disabled via:
+
+ * the checkbox in its tab ;
+ * the command ``t``.
+
+You can also toggle the state of all connections with:
+
+ * the *convert* button (first one of the toolbar) ;
+ * the command ``ta``.
+
+A connection can be refreshed, it will eventually kill the current process and start a new one.
+
+You an do this via:
+
+ * the refresh button in its tab ;
+ * the command ``r`` ;
+ * the refresh button in the toolbar, to refresh all ;
+ * the command ``ra``, to refresh all.
+
+You have two more commands, to navigate into tabs:
+
+ * ``p`` : go to previous page ;
+ * ``n`` : go to last page.
