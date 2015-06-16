@@ -6,11 +6,12 @@ import os
 
 
 class TerminalTab(Vte.Terminal):
-    def __init__(self, notebook, host, *args, **kwargs):
+    def __init__(self, notebook, host, title=None, *args, **kwargs):
         super(TerminalTab, self).__init__(*args, **kwargs)
 
         self.notebook = notebook
         self.host = host
+        self.title = title or host
 
         self.activator = Gtk.CheckButton()
         self.activator.set_active(True)
@@ -49,7 +50,7 @@ class TerminalTab(Vte.Terminal):
         self()
 
     def get_term_title(self, nomarkup=False):
-        title = self.get_window_title() or self.host
+        title = self.get_window_title() or self.title
 
         if nomarkup:
             return title
@@ -90,8 +91,13 @@ class Notebook(Gtk.Notebook):
         self.set_scrollable(True)
 
         for host in hosts:
-            # Create VTE Terminal with SSH connection
-            term = TerminalTab(self, host)
+            if isinstance(host, basestring):
+                # Create VTE Terminal with SSH connection
+                term = TerminalTab(self, host)
+
+            elif isinstance(host, dict):
+                term = TerminalTab(self, host['addr'], title=host['name'])
+
             term()
 
             self.append_page_menu(term, term.get_tab(), term.label)
