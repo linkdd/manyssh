@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from gi.repository import GLib, Gtk, Vte
+from past.builtins import basestring
 import signal
 import os
 

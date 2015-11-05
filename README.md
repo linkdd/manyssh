@@ -11,6 +11,7 @@ One command line to control multiple SSH connections.
     # apt-get install gir1.2-gtk-3.0 gir1.2-vte-2.90 python-gi python-gobject python-gobject-2 python-gobject-dev
     $ git clone https://github.com/linkdd/manyssh.git
     $ cd manyssh
+    $ pip install -r requirements.txt
     $ python setup.py install
 
 ## Usage

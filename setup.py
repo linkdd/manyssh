@@ -39,5 +39,9 @@ setup(
 
     cmdclass={
         'install': ManySSHInstall
-    }
+    },
+
+    install_requires=[
+        'future>=0.15.2'
+    ]
 )
